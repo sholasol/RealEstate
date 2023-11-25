@@ -1,5 +1,5 @@
 <div class="sidebar-footer">
-    <a class="pull-left" href="page-profile.html" data-toggle="tooltip" data-placement="top" data-original-title="Profile">
+    <a class="pull-left" href="{{ url('admin/profile') }}" data-toggle="tooltip" data-placement="top" data-original-title="Profile">
         <i data-feather="user" class="ht-15"></i></a>
     <a class="pull-left " href="mailbox.html" data-toggle="tooltip" data-placement="top" data-original-title="Mailbox">
         <i data-feather="mail" class="ht-15"></i></a>

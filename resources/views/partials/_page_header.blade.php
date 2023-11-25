@@ -1,9 +1,11 @@
 <nav class="navbar navbar-expand-lg">
     <ul class="list-inline list-unstyled mg-r-20">
         <!-- Mobile Toggle and Logo -->
-        <li class="list-inline-item align-text-top"><a class="hidden-md hidden-lg" href="#" id="sidebar-toggle-button"><i class="ion-navicon tx-20"></i></a></li>
+        <li class="list-inline-item align-text-top"><a class="hidden-md hidden-lg" href="#"
+                id="sidebar-toggle-button"><i class="ion-navicon tx-20"></i></a></li>
         <!-- PC Toggle and Logo -->
-        <li class="list-inline-item align-text-top"><a class="hidden-xs hidden-sm" href="#" id="collapsed-sidebar-toggle-button"><i class="ion-navicon tx-20"></i></a></li>
+        <li class="list-inline-item align-text-top"><a class="hidden-xs hidden-sm" href="#"
+                id="collapsed-sidebar-toggle-button"><i class="ion-navicon tx-20"></i></a></li>
     </ul>
     <!--================================-->
     <!-- Mega Menu Start -->
@@ -12,7 +14,8 @@
         <ul class="navbar-nav mr-auto">
             <!-- Features -->
             <li class="dropdown mega-dropdown mg-t-5">
-                <a class="dropdown-toggle btn mg-r-10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Features
+                <a class="dropdown-toggle btn mg-r-10" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Features
                 </a>
                 <div class="dropdown-menu mega-menu pd-15">
                     <div class="row">
@@ -70,7 +73,8 @@
     <!--================================-->
     <div class="header-right pull-right">
         <ul class="list-inline justify-content-end">
-            <li class="list-inline-item align-middle"><a href="#" id="search-button"><i class="ion-ios-search-strong tx-20"></i></a></li>
+            <li class="list-inline-item align-middle"><a href="#" id="search-button"><i
+                        class="ion-ios-search-strong tx-20"></i></a></li>
             <!--================================-->
             <!-- Languages Dropdown Start -->
             <!--================================-->
@@ -104,7 +108,8 @@
             <!-- Notifications Dropdown Start -->
             <!--================================-->
             <li class="list-inline-item dropdown hidden-xs">
-                <a class="notification-icon" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="notification-icon" href="" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
                     <i class="icon-bell tx-16"></i>
                     <span class="notification-count wave in"></span>
                 </a>
@@ -121,7 +126,8 @@
                         <div class="notifications-box" id="notificationsBox">
                             <a class="dropdown-item list-group-item" href="javascript:void(0)">
                                 <div class="d-flex justify-content-between">
-                                    <div class="wd-45 ht-38 mg-r-15 d-flex align-items-center justify-content-center rounded-circle card-icon-success">
+                                    <div
+                                        class="wd-45 ht-38 mg-r-15 d-flex align-items-center justify-content-center rounded-circle card-icon-success">
                                         <i class="fa fa-smile-o tx-success tx-16"></i>
                                     </div>
                                     <div>
@@ -134,7 +140,8 @@
                             </a>
                             <a class="dropdown-item list-group-item" href="javascript:void(0)">
                                 <div class="d-flex justify-content-between">
-                                    <div class="wd-45 ht-38 mg-r-15 d-flex align-items-center justify-content-center rounded-circle card-icon-warning">
+                                    <div
+                                        class="wd-45 ht-38 mg-r-15 d-flex align-items-center justify-content-center rounded-circle card-icon-warning">
                                         <i class="fa fa-bell tx-warning tx-16"></i>
                                     </div>
                                     <div>
@@ -147,7 +154,8 @@
                             </a>
                             <a class="dropdown-item list-group-item" href="javascript:void(0)">
                                 <div class="d-flex justify-content-between">
-                                    <div class="wd-45 ht-38 mg-r-15 d-flex align-items-center justify-content-center rounded-circle card-icon-success">
+                                    <div
+                                        class="wd-45 ht-38 mg-r-15 d-flex align-items-center justify-content-center rounded-circle card-icon-success">
                                         <i class="fa fa-check tx-success tx-16"></i>
                                     </div>
                                     <div>
@@ -160,7 +168,8 @@
                             </a>
                             <a class="dropdown-item list-group-item" href="javascript:void(0)">
                                 <div class="d-flex justify-content-between">
-                                    <div class="wd-45 ht-38 mg-r-15 d-flex align-items-center justify-content-center rounded-circle card-icon-danger">
+                                    <div
+                                        class="wd-45 ht-38 mg-r-15 d-flex align-items-center justify-content-center rounded-circle card-icon-danger">
                                         <i class="fa fa-heartbeat tx-danger tx-16"></i>
                                     </div>
                                     <div>
@@ -173,7 +182,8 @@
                             </a>
                             <a class="dropdown-item list-group-item" href="javascript:void(0)">
                                 <div class="d-flex justify-content-between">
-                                    <div class="wd-45 ht-38 mg-r-15 d-flex align-items-center justify-content-center rounded-circle card-icon-primary">
+                                    <div
+                                        class="wd-45 ht-38 mg-r-15 d-flex align-items-center justify-content-center rounded-circle card-icon-primary">
                                         <i class="fa fa-info tx-info tx-16"></i>
                                     </div>
                                     <div>
@@ -186,7 +196,8 @@
                             </a>
                             <a class="dropdown-item list-group-item" href="javascript:void(0)">
                                 <div class="d-flex justify-content-between">
-                                    <div class="wd-45 ht-38 mg-r-15 d-flex align-items-center justify-content-center rounded-circle card-icon-primary">
+                                    <div
+                                        class="wd-45 ht-38 mg-r-15 d-flex align-items-center justify-content-center rounded-circle card-icon-primary">
                                         <i class="fa fa-info tx-info tx-16"></i>
                                     </div>
                                     <div>
@@ -209,7 +220,8 @@
             <!-- Messages Dropdown Start -->
             <!--================================-->
             <li class="list-inline-item dropdown hidden-xs">
-                <a class="message-icon" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="message-icon" href="" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
                     <i class="icon-envelope tx-16"></i>
                     <span class="messages-count wave in"></span>
                 </a>
@@ -226,7 +238,8 @@
                                 <div class="d-flex justify-content-between">
                                     <div class="pd-r-15">
                                         <span class="avatar avatar-online">
-                                            <img src="{{ url('public/assets/images/avatar/avatar1.png')}}" class="img-fluid" alt="">
+                                            <img src="{{ url('public/assets/images/avatar/avatar1.png')}}"
+                                                class="img-fluid" alt="">
                                             <i></i>
                                         </span>
                                     </div>
@@ -242,7 +255,8 @@
                                 <div class="d-flex justify-content-between">
                                     <div class="pd-r-15">
                                         <span class="avatar avatar-online">
-                                            <img src="{{ url('public/assets/images/avatar/avatar2.png')}}" class="img-fluid" alt="">
+                                            <img src="{{ url('public/assets/images/avatar/avatar2.png')}}"
+                                                class="img-fluid" alt="">
                                             <i></i>
                                         </span>
                                     </div>
@@ -258,7 +272,8 @@
                                 <div class="d-flex justify-content-between">
                                     <div class="pd-r-15">
                                         <span class="avatar avatar-busy">
-                                            <img src="{{ url('public/assets/images/avatar/avatar3.png')}}" class="img-fluid" alt="">
+                                            <img src="{{ url('public/assets/images/avatar/avatar3.png')}}"
+                                                class="img-fluid" alt="">
                                             <i></i>
                                         </span>
                                     </div>
@@ -274,7 +289,8 @@
                                 <div class="d-flex justify-content-between">
                                     <div class="pd-r-15">
                                         <span class="avatar avatar-busy">
-                                            <img src="{{ url('public/assets/images/avatar/avatar4.png')}}" class="img-fluid" alt="">
+                                            <img src="{{ url('public/assets/images/avatar/avatar4.png')}}"
+                                                class="img-fluid" alt="">
                                             <i></i>
                                         </span>
                                     </div>
@@ -290,7 +306,8 @@
                                 <div class="d-flex justify-content-between">
                                     <div class="pd-r-15">
                                         <span class="avatar avatar-offline">
-                                            <img src="{{ url('public/assets/images/avatar/avatar5.png')}}" class="img-fluid" alt="">
+                                            <img src="{{ url('public/assets/images/avatar/avatar5.png')}}"
+                                                class="img-fluid" alt="">
                                             <i></i>
                                         </span>
                                     </div>
@@ -306,7 +323,8 @@
                                 <div class="d-flex justify-content-between">
                                     <div class="pd-r-15">
                                         <span class="avatar avatar-offline">
-                                            <img src="{{ url('public/assets/images/avatar/avatar6.png')}}" class="img-fluid" alt="">
+                                            <img src="{{ url('public/assets/images/avatar/avatar6.png')}}"
+                                                class="img-fluid" alt="">
                                             <i></i>
                                         </span>
                                     </div>
@@ -332,26 +350,30 @@
             <li class="list-inline-item dropdown">
                 <a href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="select-profile">Hi, {{Auth::user()->firstname }}!</span>
-                    <img src="{{ url('public/assets/images/avatar/avatar1.png')}}" class="img-fluid wd-35 ht-35 rounded-circle" alt="">
+                    <img src="{{  (!empty($data->photo)) ?  url('uploads/'.$data->photo) : url('uploads/no-image.png') }}"
+                        class="img-fluid wd-35 ht-35 rounded-circle" alt="">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-profile shadow-2">
                     <div class="user-profile-area">
                         <div class="user-profile-heading">
                             <div class="profile-thumbnail">
-                                <img src="{{ url('public/assets/images/avatar/avatar1.png')}}" class="img-fluid wd-35 ht-35 rounded-circle" alt="">
+                                <img src="{{  (!empty($data->photo)) ?  url('uploads/'.$data->photo) : url('uploads/no-image.png') }}"
+                                    class="img-fluid wd-35 ht-35 rounded-circle" alt="">
                             </div>
                             <div class="profile-text">
                                 <h6>{{Auth::user()->firstname }}</h6>
                                 <span>{{Auth::user()->email }}</span>
                             </div>
                         </div>
-                        <a href="" class="dropdown-item"><i class="icon-user" aria-hidden="true"></i> My
+                        <a href="{{ url('admin/profile') }}" class="dropdown-item"><i class="icon-user"
+                                aria-hidden="true"></i> My
                             profile</a>
                         <a href="" class="dropdown-item"><i class="icon-envelope" aria-hidden="true"></i>
                             Messages <span class="badge badge-success ft-right mg-t-3">10+</span></a>
                         <a href="" class="dropdown-item"><i class="icon-settings" aria-hidden="true"></i>
                             settings</a>
-                        <a href="{{ url('auth/logout') }}" class="dropdown-item"><i class="icon-power" aria-hidden="true"></i>
+                        <a href="{{ url('auth/logout') }}" class="dropdown-item"><i class="icon-power"
+                                aria-hidden="true"></i>
                             Sign-out</a>
                     </div>
                 </div>
@@ -361,7 +383,8 @@
             <!-- Setting Sidebar Start -->
             <!--================================-->
             <li class="list-inline-item dropdown hidden-xs">
-                <a class="settings-icon" id="settingSidebarTrigger" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="settings-icon" id="settingSidebarTrigger" href="" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
                     <i class="icon-settings tx-16"></i>
                 </a>
             </li>
