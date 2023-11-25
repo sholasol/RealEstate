@@ -12,15 +12,15 @@
     <!-- Page Title -->
     <title>Authentication | RealEstate</title>
     <!-- Main CSS -->
-    <link type="text/css" rel="stylesheet" href="{{ url('public/assets/plugins/bootstrap/css/bootstrap.min.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{ url('public/assets/plugins/font-awesome/css/font-awesome.min.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{ url('public/assets/plugins/simple-line-icons/css/simple-line-icons.css')}}">
-    <link type="text/css" rel="stylesheet" href="{{ url('public/assets/plugins/ionicons/css/ionicons.css')}}">
-    <link type="text/css" rel="stylesheet" href="{{ url('public/assets/css/app.min.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{ url('public/assets/css/style.min.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{ url('public/assets/css/auth.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{ url('assets/plugins/bootstrap/css/bootstrap.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{ url('assets/plugins/font-awesome/css/font-awesome.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{ url('assets/plugins/simple-line-icons/css/simple-line-icons.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{ url('assets/plugins/ionicons/css/ionicons.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{ url('assets/css/app.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{ url('assets/css/style.min.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{ url('assets/css/auth.css')}}" />
     <!-- Favicon -->
-    <link rel="icon" href="{{ url('public/assets/images/favicon.ico')}}" type="image/x-icon">
+    <link rel="icon" href="{{ url('assets/images/favicon.ico')}}" type="image/x-icon">
     <style>
         .mtop {
             margin-top: 150px;
@@ -46,13 +46,13 @@
     <!--================================-->
     <!-- Footer Script -->
     <!--================================-->
-    <script src="{{ url('public/assets/plugins/jquery/jquery.min.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/jquery-ui/jquery-ui.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/popper/popper.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/pace/pace.min.js')}}"></script>
-    <script src="{{ url('public/assets/js/jquery.slimscroll.min.js')}}"></script>
-    <script src="{{ url('public/assets/js/custom.js')}}"></script>
+    <script src="{{ url('assets/plugins/jquery/jquery.min.js')}}"></script>
+    <script src="{{ url('assets/plugins/jquery-ui/jquery-ui.js')}}"></script>
+    <script src="{{ url('assets/plugins/popper/popper.js')}}"></script>
+    <script src="{{ url('assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{ url('assets/plugins/pace/pace.min.js')}}"></script>
+    <script src="{{ url('assets/js/jquery.slimscroll.min.js')}}"></script>
+    <script src="{{ url('assets/js/custom.js')}}"></script>
 </body>
 
 </html>

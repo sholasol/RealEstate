@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\backend\AgentController;
 use App\Http\Controllers\backend\DashboardController;
@@ -16,9 +17,12 @@ use App\Http\Controllers\backend\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('', [AuthController::class, 'authLogin'])->name('auth.login');
+Route::get('/auth/logout', [AuthController::class, 'adminLogout'])->name('auth.logout');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -34,7 +38,6 @@ require __DIR__ . '/auth.php';
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'adminDashboard'])->name('admin.dashboard');
-    Route::get('/admin/logout', [DashboardController::class, 'adminLogout'])->name('admin.logout');
 });
 
 

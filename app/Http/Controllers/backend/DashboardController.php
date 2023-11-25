@@ -13,16 +13,4 @@ class DashboardController extends Controller
     {
         return view('admin.dashboard');
     }
-
-
-    public function adminLogout(Request $request)
-    {
-        Auth::guard('web')->logout();
-
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
-
-        return redirect('/login');
-    }
 }

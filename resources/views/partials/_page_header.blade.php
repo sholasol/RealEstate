@@ -351,7 +351,7 @@
                             Messages <span class="badge badge-success ft-right mg-t-3">10+</span></a>
                         <a href="" class="dropdown-item"><i class="icon-settings" aria-hidden="true"></i>
                             settings</a>
-                        <a href="{{ url('admin/logout') }}" class="dropdown-item"><i class="icon-power" aria-hidden="true"></i>
+                        <a href="{{ url('auth/logout') }}" class="dropdown-item"><i class="icon-power" aria-hidden="true"></i>
                             Sign-out</a>
                     </div>
                 </div>
