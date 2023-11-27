@@ -13,7 +13,8 @@
                                 <div class="d-flex align-items-center">
                                     <div class="mr-3">
                                         <span class="avatar avatar-lg avatar-online pd-b-20">
-                                            <img src="{{  (!empty($data->photo)) ?  url('uploads/'.$data->photo) : url('uploads/no-image.png') }}" class="img-fluid wd-100" alt="">
+                                            <img src="{{  (!empty($data->photo)) ?  url('uploads/'.$data->photo) : url('uploads/no-image.png') }}"
+                                                class="img-fluid wd-100" alt="">
                                         </span>
                                     </div>
                                     <div class="mg-b-0">
@@ -51,10 +52,14 @@
                             <div class="col-12">
                                 <ul class="nav ft-sm-none ft-right" id="pills-tab" role="tablist">
                                     <li class="nav-item mg-r-10">
-                                        <a class="btn btn-sm btn-label-primary active show" id="nav-profile-tab" data-toggle="pill" href="#my-profile" role="tab" aria-controls="my-profile" aria-selected="false">Profile Inforamtion</a>
+                                        <a class="btn btn-sm btn-label-primary active show" id="nav-profile-tab"
+                                            data-toggle="pill" href="#my-profile" role="tab" aria-controls="my-profile"
+                                            aria-selected="false">Profile Inforamtion</a>
                                     </li>
                                     <li class="nav-item mg-r-10">
-                                        <a class="btn btn-sm btn-label-danger" id="nav-setting-tab" data-toggle="pill" href="#my-setting" role="tab" aria-controls="my-setting" aria-selected="true">Setting</a>
+                                        <a class="btn btn-sm btn-label-danger" id="nav-setting-tab" data-toggle="pill"
+                                            href="#my-setting" role="tab" aria-controls="my-setting"
+                                            aria-selected="true">Setting</a>
                                     </li>
                                 </ul>
                             </div>
@@ -106,32 +111,70 @@
             <div class="col-md-12 col-lg-8 col-xl-9">
                 <div class="card bd-t-0-force bd-b-0-force pd-t-20">
                     <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="my-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div class="tab-pane fade show active" id="my-profile" role="tabpanel"
+                            aria-labelledby="nav-profile-tab">
 
                             <div class="card-body pd-0 pd-x-20">
-                                <form class="form-horizontal">
-                                    <div class="form-group">
-                                        <label class="col-md-12">Full Name</label>
+                                <form class="form-horizontal" action="" method="" enctype="formdata">
+                                    <div class=" form-group">
+                                        <label class="col-md-12">Firstname</label>
                                         <div class="col-md-12">
-                                            <input type="text" value="{{ $data->firstname}} {{$data->lastname}}" class="form-control">
+                                            <input type="text" name="firstname" value="{{ $data->firstname}}"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12"> Lastname</label>
+                                        <div class="col-md-12">
+                                            <input type="text" name="lastname" value=" {{$data->lastname}}"
+                                                class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="example-email" class="col-md-12">Email</label>
                                         <div class="col-md-12">
-                                            <input type="email" value="j{{$data->email}}" class="form-control" name="example-email" id="example-email">
+                                            <input type="email" name="email" value="{{$data->email}}"
+                                                class="form-control" name="example-email" id="example-email">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12">Phone</label>
                                         <div class="col-md-12">
-                                            <input type="text" value="{{$data->phone}}" class="form-control">
+                                            <input type="text" name="phone" value="{{$data->phone}}"
+                                                class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12">Username</label>
                                         <div class="col-md-12">
-                                            <input type="text" value="{{$data->username}}" class="form-control">
+                                            <input type="text" name="username" value="{{$data->username}}"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Address</label>
+                                        <div class="col-md-12">
+                                            <input type="text" name="address" value="{{$data->address}}"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-12">Upload</label>
+                                        <div class="col-md-12">
+                                            <div class="custom-file">
+                                                <input type="file" name="photo" class="custom-file-input"
+                                                    id="inputGroupFile01">
+                                                <label class="custom-file-label" for="inputGroupFile01">Choose
+                                                    file</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Preview</label>
+                                        <div class="col-md-12">
+                                            <img src="{{  (!empty($data->photo)) ?  url('uploads/'.$data->photo) : url('uploads/no-image.png') }}"
+                                                class="img-fluid wd-100" alt="">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -146,21 +189,25 @@
                             <div class="card-body">
                                 <form class="form-horizontal">
                                     <div class="row row-xs">
-                                        <label class="col-sm-4 form-control-label">Old Password: <span class="tx-danger">*</span></label>
+                                        <label class="col-sm-4 form-control-label">Old Password: <span
+                                                class="tx-danger">*</span></label>
                                         <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                                             <input type="text" class="form-control" placeholder="Enter Your Name">
                                         </div>
                                     </div>
                                     <div class="row row-xs mg-t-20">
-                                        <label class="col-sm-4 form-control-label">Email: <span class="tx-danger">*</span></label>
+                                        <label class="col-sm-4 form-control-label">Email: <span
+                                                class="tx-danger">*</span></label>
                                         <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                                             <input type="text" class="form-control" placeholder="Enter Your Email">
                                         </div>
                                     </div>
                                     <div class="row row-xs mg-t-20">
-                                        <label class="col-sm-4 form-control-label">Messates: <span class="tx-danger">*</span></label>
+                                        <label class="col-sm-4 form-control-label">Messates: <span
+                                                class="tx-danger">*</span></label>
                                         <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                            <textarea rows="5" class="form-control" placeholder="Enter Your Messages"></textarea>
+                                            <textarea rows="5" class="form-control"
+                                                placeholder="Enter Your Messages"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group mg-t-20">
