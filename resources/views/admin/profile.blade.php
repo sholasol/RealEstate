@@ -55,7 +55,7 @@
                                         <a class="btn btn-sm btn-label-primary active show" id="nav-profile-tab" data-toggle="pill" href="#my-profile" role="tab" aria-controls="my-profile" aria-selected="false">Profile Inforamtion</a>
                                     </li>
                                     <li class="nav-item mg-r-10">
-                                        <a class="btn btn-sm btn-label-danger" id="nav-setting-tab" data-toggle="pill" href="#my-setting" role="tab" aria-controls="my-setting" aria-selected="true">Setting</a>
+                                        <a class="btn btn-sm btn-label-danger" id="nav-setting-tab" data-toggle="pill" href="#my-setting" role="tab" aria-controls="my-setting" aria-selected="true">Change Password</a>
                                     </li>
                                 </ul>
                             </div>
@@ -117,18 +117,21 @@
                                         <div class="col-md-12">
                                             <input type="text" name="firstname" value="{{ $data->firstname}}" class="form-control">
                                         </div>
+                                        <p class="text-danger">{{$errors->first('firstname')}}</p>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12"> Lastname</label>
                                         <div class="col-md-12">
                                             <input type="text" name="lastname" value=" {{$data->lastname}}" class="form-control">
                                         </div>
+                                        <p class="text-danger">{{$errors->first('lastname')}}</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="example-email" class="col-md-12">Email</label>
                                         <div class="col-md-12">
                                             <input type="email" name="email" value="{{$data->email}}" class="form-control" name="example-email" id="example-email">
                                         </div>
+                                        <p class="text-danger">{{$errors->first('email')}}</p>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12">Phone</label>
@@ -172,33 +175,38 @@
                         </div>
                         <div class="tab-pane fade" id="my-setting" role="tabpanel" aria-labelledby="nav-setting-tab">
                             <div class="card-body">
-                                <tform class="form-horizontal">
-                                    <div class="row row-xs">
+                                <form class="form-horizontal" action="{{ route('changePassword') }}" method="POST">
+                                    @csrf
+                                    <div class=" row row-xs">
                                         <label class="col-sm-4 form-control-label">Old Password: <span class="tx-danger">*</span></label>
                                         <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                            <input type="text" class="form-control" placeholder="Enter Your Name">
+                                            <input type="password" name="old_password" class="form-control" placeholder="Enter Old Password">
                                         </div>
+                                        <p class="text-danger">{{$errors->first('old_password')}}</p>
                                     </div>
                                     <div class="row row-xs mg-t-20">
-                                        <label class="col-sm-4 form-control-label">Email: <span class="tx-danger">*</span></label>
+                                        <label class="col-sm-4 form-control-label">New Password: <span class="tx-danger">*</span></label>
                                         <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                            <input type="text" class="form-control" placeholder="Enter Your Email">
+                                            <input type="password" name="password" class="form-control" placeholder="Enter New Password">
                                         </div>
+                                        <p class="text-danger">{{$errors->first('password')}}</p>
                                     </div>
                                     <div class="row row-xs mg-t-20">
-                                        <label class="col-sm-4 form-control-label">Messates: <span class="tx-danger">*</span></label>
+                                        <label class="col-sm-4 form-control-label">Confirm Password: <span class="tx-danger">*</span></label>
                                         <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                            <textarea rows="5" class="form-contreol" placeholder="Enter Your Messages"></textarea>
+                                            <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password">
                                         </div>
+                                        <p class="text-danger">{{$errors->first('confirm_password')}}</p>
                                     </div>
                                     <div class="form-group mg-t-20">
                                         <div class="col-sm-12">
-                                            <button class="btn btn-custom-primary ft-right">Send Message</button>
+                                            <button type="submit" class="btn btn-custom-primary ft-right">Change
+                                                Password</button>
                                         </div>
 
 
                                     </div>
-                                    </form>
+                                </form>
                             </div>
                         </div>
                     </div>

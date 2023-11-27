@@ -24,6 +24,12 @@ class DashboardController extends Controller
 
     public function uploadImg(Request $request)
     {
+        $request->validate([
+            'fisrtname' => ['required', 'string', 'max:255'],
+            'lastname' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255',],
+        ]);
+
         $id = Auth::user()->id;
         $data = User::find($id);
 
@@ -36,6 +42,7 @@ class DashboardController extends Controller
 
         if ($request->file('photo')) {
             $file = $request->file('photo');
+            @unlink(public_path('uploads/' . $data->photo)); //remove previous image
             $filename = date('YmdHi') . $file->getClientOriginalName();
             $file->move(public_path('uploads'), $filename);
             $data['photo'] = $filename;
@@ -49,5 +56,14 @@ class DashboardController extends Controller
         );
 
         return redirect()->back()->with($notificaion);
+    }
+
+    public function changePassword(Request $request)
+    {
+        $request->validate([
+            'old_password' => ['required', 'string', 'max:255'],
+            'password' => ['required', 'string', 'max:255'],
+            'confirm_password' => ['required_with:password|same:password|min:6'],
+        ]);
     }
 }
