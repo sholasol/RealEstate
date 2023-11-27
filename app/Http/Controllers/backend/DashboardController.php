@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Hash;
 
 class DashboardController extends Controller
 {
@@ -65,5 +66,29 @@ class DashboardController extends Controller
             'password' => ['required', 'string', 'max:255'],
             'confirm_password' => ['required_with:password|same:password|min:6'],
         ]);
+
+        $id = Auth::user()->id;
+        $data = User::find($id);
+
+        if (!Hash::check($request->old_password, auth::user()->password)) {
+            $notificaion = array(
+                'message' => 'Invalid password',
+                'alert-type' => 'error'
+            );
+
+            return redirect()->back()->with($notificaion);
+        }
+
+        //update
+        User::whereId(auth()->user()->id)->update([
+            'password' => Hash::make($request->password)
+        ]);
+
+        $notificaion = array(
+            'message' => 'Password changed successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notificaion);
     }
 }
