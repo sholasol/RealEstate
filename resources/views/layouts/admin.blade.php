@@ -15,7 +15,8 @@
     <link type="text/css" rel="stylesheet" href="{{ url('assets/plugins/bootstrap/css/bootstrap.min.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{ url('assets/plugins/font-awesome/css/font-awesome.min.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{ url('assets/plugins/flag-icon/flag-icon.min.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{ url('assets/plugins/simple-line-icons/css/simple-line-icons.css')}}">
+    <link type="text/css" rel="stylesheet"
+        href="{{ url('assets/plugins/simple-line-icons/css/simple-line-icons.css')}}">
     <link type="text/css" rel="stylesheet" href="{{ url('assets/plugins/ionicons/css/ionicons.css')}}">
     <link type="text/css" rel="stylesheet" href="{{ url('assets/plugins/toastr/toastr.min.css')}}">
     <link type="text/css" rel="stylesheet" href="{{ url('assets/plugins/apex-chart/apexcharts.css')}}">
@@ -23,7 +24,8 @@
     <link type="text/css" rel="stylesheet" href="{{ url('assets/css/style.min.css')}}" />
 
     <link type="text/css" rel="stylesheet" href="{{ url('assets/plugins/datatables/jquery.dataTables.min.css')}}">
-    <link type="text/css" rel="stylesheet" href="{{ url('assets/plugins/datatables/extensions/dataTables.jqueryui.min.css')}}">
+    <link type="text/css" rel="stylesheet"
+        href="{{ url('assets/plugins/datatables/extensions/dataTables.jqueryui.min.css')}}">
 
     <link type="text/css" rel="stylesheet" href="{{ url('assets/plugins/datepicker/css/datepicker.min.css')}}">
     <!-- Favicon -->
@@ -80,7 +82,8 @@
                 <div class="search-form">
                     <form action="#" method="GET">
                         <div class="input-group">
-                            <input class="form-control search-input" name="search" placeholder="Type something..." type="text" />
+                            <input class="form-control search-input" name="search" placeholder="Type something..."
+                                type="text" />
                             <span class="input-group-btn">
                                 <span id="close-search"><i class="ion-ios-close-empty"></i></span>
                             </span>
@@ -163,33 +166,57 @@
     <script src="{{ url('assets/plugins/datepicker/js/datepicker.es.js')}}"></script>
 
     <script>
-        // Hoverable DataTable	
-        $('#hoverTable').DataTable({
-            responsive: true,
-            language: {
-                searchPlaceholder: 'Search...',
-                sSearch: ''
-            }
-        });
+    // Hoverable DataTable	
+    $('#hoverTable').DataTable({
+        responsive: true,
+        language: {
+            searchPlaceholder: 'Search...',
+            sSearch: ''
+        }
+    });
     </script>
 
     <script>
-        // Make Sunday and Saturday disabled
-        var disabledDays = [0, 6];
-        $('#disabled-days').datepicker({
-            language: 'en',
-            onRenderCell: function(date, cellType) {
-                if (cellType == 'day') {
-                    var day = date.getDay(),
-                        isDisabled = disabledDays.indexOf(day) != -1;
+    // Make Sunday and Saturday disabled
+    var disabledDays = [0, 6];
+    $('#disabled-days').datepicker({
+        language: 'en',
+        onRenderCell: function(date, cellType) {
+            if (cellType == 'day') {
+                var day = date.getDay(),
+                    isDisabled = disabledDays.indexOf(day) != -1;
 
-                    return {
-                        disabled: isDisabled
-                    }
+                return {
+                    disabled: isDisabled
                 }
             }
-        })
+        }
+    })
     </script>
+
+    <script>
+    @if(Session::has('message'))
+    var type = "{{ Session::get('alert-type', 'info')}}"
+    switch(type){
+        case 'info':
+        toastr.info(" {{Session::get('message')}} ");
+        break;
+
+        case 'success':
+        toastr.success(" {{Session::get('message')}} ");
+        break;
+
+        case 'warning':
+        toastr.warning(" {{Session::get('message')}} ");
+        break;
+
+        case 'error':
+        toastr.error(" {{Session::get('message')}} ");
+        break;
+    }
+    @endif
+    </script>
+
 
     @yield('script')
 </body>
