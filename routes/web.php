@@ -44,6 +44,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/changePassword', [DashboardController::class, 'changePassword'])->name('changePassword');
     //changePassword
     Route::get('/admin/property_type', [PropertyTypeController::class, 'propertyType'])->name('admin.property_type');
+    Route::get('/admin/create_type', [PropertyTypeController::class, 'createType'])->name('admin.create_type');
+    Route::post('/createPropertyType', [PropertyTypeController::class, 'createPropertyType'])->name('createPropertyType');
 });
 
 

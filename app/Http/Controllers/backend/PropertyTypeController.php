@@ -13,4 +13,31 @@ class PropertyTypeController extends Controller
         $types = PropertyType::latest()->get();
         return view('property.types', ['types' => $types]);
     }
+
+    public function createType()
+    {
+        return view('property.create_type');
+    }
+
+    public function createPropertyType(Request $request)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'icon' => ['required', 'string', 'lowercase'],
+        ]);
+
+        $ptype = new PropertyType();
+
+        $ptype->type_name = $request->name;
+        $ptype->type_icon = $request->icon;
+
+        $ptype->save();
+
+        $notificaion = array(
+            'message' => 'Property type created successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notificaion);
+    }
 }
