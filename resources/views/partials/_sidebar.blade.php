@@ -9,6 +9,10 @@
                 <a href="{{ url('admin/dashboard') }}"><i data-feather="home"></i>
                     <span>Dashboard</span></a>
             </li>
+            <li class="@if(Request::segment(2) =='property_type') active @endif">
+                <a href="{{ url('admin/property_type') }}"><i data-feather="server"></i>
+                    <span>Property Type</span></a>
+            </li>
             <!-- <li class="@if(Request::segment(2) =='employees') active @endif">
                 <a href="{{ url('admin/employees') }}"><i data-feather="users"></i>
                     <span>Employees</span></a>

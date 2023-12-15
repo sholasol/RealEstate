@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\backend\AgentController;
 use App\Http\Controllers\backend\DashboardController;
+use App\Http\Controllers\backend\PropertyTypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/uploadImg', [DashboardController::class, 'uploadImg'])->name('uploadImg');
     Route::post('/changePassword', [DashboardController::class, 'changePassword'])->name('changePassword');
     //changePassword
+    Route::get('/admin/property_type', [PropertyTypeController::class, 'propertyType'])->name('admin.property_type');
 });
 
 
