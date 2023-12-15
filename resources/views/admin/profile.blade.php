@@ -14,7 +14,8 @@
                                 <div class="d-flex align-items-center">
                                     <div class="mr-3">
                                         <span class="avatar avatar-lg avatar-online pd-b-20">
-                                            <img src="{{  (!empty($data->photo)) ?  url('uploads/'.$data->photo) : url('uploads/no-image.png') }}" class="img-fluid wd-100" alt="">
+                                            <img src="{{  (!empty($data->photo)) ?  url('uploads/'.$data->photo) : url('uploads/no-image.png') }}"
+                                                class="img-fluid wd-100" alt="">
                                         </span>
                                     </div>
                                     <div class="mg-b-0">
@@ -52,10 +53,14 @@
                             <div class="col-12">
                                 <ul class="nav ft-sm-none ft-right" id="pills-tab" role="tablist">
                                     <li class="nav-item mg-r-10">
-                                        <a class="btn btn-sm btn-label-primary active show" id="nav-profile-tab" data-toggle="pill" href="#my-profile" role="tab" aria-controls="my-profile" aria-selected="false">Profile Inforamtion</a>
+                                        <a class="btn btn-sm btn-label-primary active show" id="nav-profile-tab"
+                                            data-toggle="pill" href="#my-profile" role="tab" aria-controls="my-profile"
+                                            aria-selected="false">Profile Inforamtion</a>
                                     </li>
                                     <li class="nav-item mg-r-10">
-                                        <a class="btn btn-sm btn-label-danger" id="nav-setting-tab" data-toggle="pill" href="#my-setting" role="tab" aria-controls="my-setting" aria-selected="true">Change Password</a>
+                                        <a class="btn btn-sm btn-label-danger" id="nav-setting-tab" data-toggle="pill"
+                                            href="#my-setting" role="tab" aria-controls="my-setting"
+                                            aria-selected="true">Change Password</a>
                                     </li>
                                 </ul>
                             </div>
@@ -107,54 +112,62 @@
             <div class="col-md-12 col-lg-8 col-xl-9">
                 <div class="card bd-t-0-force bd-b-0-force pd-t-20">
                     <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="my-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div class="tab-pane fade show active" id="my-profile" role="tabpanel"
+                            aria-labelledby="nav-profile-tab">
 
                             <div class="card-body pd-0 pd-x-20">
-                                <form class="form-horizontal" action="{{ route('uploadImg')}}" method="POST" enctype="multipart/form-data">
+                                <form class="form-horizontal" action="{{ route('uploadImg')}}" method="POST"
+                                    enctype="multipart/form-data">
                                     @csrf
                                     <div class=" form-group">
                                         <label class="col-md-12">Firstname</label>
                                         <div class="col-md-12">
-                                            <input type="text" name="firstname" value="{{ $data->firstname}}" class="form-control">
+                                            <input type="text" name="firstname" value="{{ $data->firstname}}"
+                                                class="form-control">
                                         </div>
                                         <p class="text-danger">{{$errors->first('firstname')}}</p>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12"> Lastname</label>
                                         <div class="col-md-12">
-                                            <input type="text" name="lastname" value=" {{$data->lastname}}" class="form-control">
+                                            <input type="text" name="lastname" value=" {{$data->lastname}}"
+                                                class="form-control">
                                         </div>
                                         <p class="text-danger">{{$errors->first('lastname')}}</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="example-email" class="col-md-12">Email</label>
                                         <div class="col-md-12">
-                                            <input type="email" name="email" value="{{$data->email}}" class="form-control" name="example-email" id="example-email">
+                                            <input type="email" name="email" value="{{$data->email}}"
+                                                class="form-control" name="example-email" id="example-email">
                                         </div>
                                         <p class="text-danger">{{$errors->first('email')}}</p>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12">Phone</label>
                                         <div class="col-md-12">
-                                            <input type="text" name="phone" value="{{$data->phone}}" class="form-control">
+                                            <input type="text" name="phone" value="{{$data->phone}}"
+                                                class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12">Username</label>
                                         <div class="col-md-12">
-                                            <input type="text" name="username" value="{{$data->username}}" class="form-control">
+                                            <input type="text" name="username" value="{{$data->username}}"
+                                                class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12">Address</label>
                                         <div class="col-md-12">
-                                            <input type="text" name="address" value="{{$data->address}}" class="form-control">
+                                            <input type="text" name="address" value="{{$data->address}}"
+                                                class="form-control">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="col-md-12">Upload</label>
-                                        <div class="col-md-12">
+                                        <div class="col-mdsub-12">
                                             <div class="custom-file">
                                                 <input type="file" name="photo" class="form-control" id="image">
                                             </div>
@@ -162,12 +175,14 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-md-12">
-                                            <img id="showImage" src="{{  (!empty($data->photo)) ?  url('uploads/'.$data->photo) : url('uploads/no-image.png') }}" class="img-fluid wd-100" alt="">
+                                            <img id="showImage"
+                                                src="{{  (!empty($data->photo)) ?  url('uploads/'.$data->photo) : url('uploads/no-image.png') }}"
+                                                class="img-fluid wd-100" alt="">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <button class="btn btn-custom-primary">Update Profile</button>
+                                            <button type="submit" class="btn btn-custom-primary">Update Profile</button>
                                         </div>
                                     </div>
                                 </form>
@@ -178,23 +193,29 @@
                                 <form class="form-horizontal" action="{{ route('changePassword') }}" method="POST">
                                     @csrf
                                     <div class=" row row-xs">
-                                        <label class="col-sm-4 form-control-label">Old Password: <span class="tx-danger">*</span></label>
+                                        <label class="col-sm-4 form-control-label">Old Password: <span
+                                                class="tx-danger">*</span></label>
                                         <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                            <input type="password" name="old_password" class="form-control" placeholder="Enter Old Password">
+                                            <input type="password" name="old_password" class="form-control"
+                                                placeholder="Enter Old Password">
                                         </div>
                                         <p class="text-danger">{{$errors->first('old_password')}}</p>
                                     </div>
                                     <div class="row row-xs mg-t-20">
-                                        <label class="col-sm-4 form-control-label">New Password: <span class="tx-danger">*</span></label>
+                                        <label class="col-sm-4 form-control-label">New Password: <span
+                                                class="tx-danger">*</span></label>
                                         <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                            <input type="password" name="password" class="form-control" placeholder="Enter New Password">
+                                            <input type="password" name="password" class="form-control"
+                                                placeholder="Enter New Password">
                                         </div>
                                         <p class="text-danger">{{$errors->first('password')}}</p>
                                     </div>
                                     <div class="row row-xs mg-t-20">
-                                        <label class="col-sm-4 form-control-label">Confirm Password: <span class="tx-danger">*</span></label>
+                                        <label class="col-sm-4 form-control-label">Confirm Password: <span
+                                                class="tx-danger">*</span></label>
                                         <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                            <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password">
+                                            <input type="password" name="confirm_password" class="form-control"
+                                                placeholder="Confirm Password">
                                         </div>
                                         <p class="text-danger">{{$errors->first('confirm_password')}}</p>
                                     </div>
@@ -221,14 +242,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">
 </script>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#image').change(function(e) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                $('#showImage').attr('src', e.target.result);
-            }
-            reader.readAsDataURL(e.target.file['0']);
-        });
+$(document).ready(function() {
+    $('#image').change(function(e) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#showImage').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(e.target.file['0']);
     });
+});
 </script>
 @endsection

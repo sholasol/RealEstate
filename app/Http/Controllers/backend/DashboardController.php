@@ -25,6 +25,8 @@ class DashboardController extends Controller
 
     public function uploadImg(Request $request)
     {
+        //dd($request->all());
+
         $request->validate([
             'fisrtname' => ['required', 'string', 'max:255'],
             'lastname' => ['required', 'string', 'max:255'],
