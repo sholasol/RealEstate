@@ -30,11 +30,13 @@ class DashboardController extends Controller
         $request->validate([
             'fisrtname' => ['required', 'string', 'max:255'],
             'lastname' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255',],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255',]
         ]);
+
 
         $id = Auth::user()->id;
         $data = User::find($id);
+
 
         $data->username = $request->username;
         $data->firstname = $request->firstname;
@@ -50,6 +52,8 @@ class DashboardController extends Controller
             $file->move(public_path('uploads'), $filename);
             $data['photo'] = $filename;
         }
+
+
 
         $data->save();
 
