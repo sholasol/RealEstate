@@ -27,10 +27,16 @@ class DashboardController extends Controller
     {
         //dd($request->all());
 
+        // $request->validate([
+        //     'fisrtname' => ['required', 'string', 'max:255'],
+        //     'lastname' => ['required', 'string', 'max:255'],
+        //     'email' => ['required', 'string', 'lowercase', 'email', 'max:255',]
+        // ]);
+
         $request->validate([
-            'fisrtname' => ['required', 'string', 'max:255'],
+            'firstname' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255'],
             'lastname' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255',]
         ]);
 
 
