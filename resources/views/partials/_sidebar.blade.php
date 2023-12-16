@@ -21,7 +21,7 @@
                 <a href=""><i data-feather="list"></i>
                     <span>Role & Permission </span></a>
                 <ul class="sub-menu">
-                    <li class="@if(Request::segment(2) =='permissions') active @endif"><a href="{{url('permission/permissions')}}">Permissions</a>
+                    <li class="@if(Request::segment(2) =='permissions') active @endif"><a href="{{url('role/permissions')}}">Permissions</a>
                     </li>
                     <li class="@if(Request::segment(2) =='roles') active @endif"><a href="{{url('role/roles')}}">Roles</a></li>
                 </ul>

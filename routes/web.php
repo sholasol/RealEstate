@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\backend\RoleController;
 use App\Http\Controllers\backend\AgentController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\PropertyTypeController;
@@ -55,6 +56,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/createAmenity', [PropertyTypeController::class, 'createAmenity'])->name('createAmenity');
     Route::post('updateAmenity', [PropertyTypeController::class, 'updateAmenity'])->name('updateAmenity'); // 
     Route::get('/amenity/delete/{id}', [PropertyTypeController::class, 'deleteAmenity'])->name('amenity.delete'); // 
+
+    //Role
+    Route::get('/role/permissions', [RoleController::class, 'permissions'])->name('role.permissions');
+    Route::get('/createPermission', [RoleController::class, 'createPermission'])->name('createPermission');
 });
 
 

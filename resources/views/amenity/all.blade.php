@@ -28,7 +28,7 @@
                     <div class="card-header-btn">
                         <a href="#" data-toggle="modal" data-target="#amenity" class="fa fa-plus-circle text-primary">
                             Create
-                            Type
+                            Amenity
                         </a>
                     </div>
                 </div>
@@ -47,12 +47,9 @@
                                 <tr>
                                     <td><span>{{$key + 1}}</span></td>
                                     <td><a href="" class="text-inherit">{{$aminity->amenity}}</a></td>
-                                    <td class="text-right"> <a href="#" data-toggle="modal"
-                                            data-target="#amenityUpd{{$aminity->id}}"
-                                            class="btn btn-label-primary btn-sm mg-y-5"><i class="fa fa-pencil"></i>
+                                    <td class="text-right"> <a href="#" data-toggle="modal" data-target="#amenityUpd{{$aminity->id}}" class="btn btn-label-primary btn-sm mg-y-5"><i class="fa fa-pencil"></i>
                                             Edit</a>
-                                        <a id="delete" href="{{ route('amenity.delete', $aminity->id) }}"
-                                            class="btn btn-label-danger btn-sm mg-y-5"><i class="fa fa-trash"></i>
+                                        <a id="delete" href="{{ route('amenity.delete', $aminity->id) }}" class="btn btn-label-danger btn-sm mg-y-5"><i class="fa fa-trash"></i>
                                             Delete</a>
                                     </td>
                                 </tr>
@@ -61,31 +58,24 @@
 
 
 
-                                <div class="modal" id="amenityUpd{{$aminity->id}}" tabindex="-1" role="dialog"
-                                    aria-labelledby="exampleModalLabel_1" style="display: none;" aria-hidden="true">
+                                <div class="modal" id="amenityUpd{{$aminity->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel_1" style="display: none;" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="exampleModalLabel_1">Amenity </h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true"><i class="ion-ios-close-empty"></i></span>
                                                 </button>
                                             </div>
-                                            <form method="post" action="{{ url('updateAmenity') }}"
-                                                enctype="multipart/form-data">
+                                            <form method="post" action="{{ url('updateAmenity') }}" enctype="multipart/form-data">
                                                 {{ csrf_field() }}
                                                 <div class="modal-body">
                                                     <div class="row no-gutters">
                                                         <div class="col-md-12">
-                                                            <input class="form-control" type="hidden" name="id"
-                                                                value="{{$aminity->id}}">
+                                                            <input class="form-control" type="hidden" name="id" value="{{$aminity->id}}">
                                                             <div class="form-group">
-                                                                <label class="form-control-label active">Amenity: <span
-                                                                        class="tx-danger">*</span></label>
-                                                                <input class="form-control" type="text" name="amenity"
-                                                                    placeholder="Enter Amenity"
-                                                                    value="{{$aminity->amenity}}">
+                                                                <label class="form-control-label active">Amenity: <span class="tx-danger">*</span></label>
+                                                                <input class="form-control" type="text" name="amenity" placeholder="Enter Amenity" value="{{$aminity->amenity}}">
                                                                 <p class="text-danger">{{$errors->first('amenity')}}
                                                                 </p>
                                                             </div>
@@ -94,8 +84,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                     <button type="submit" class="btn btn-primary">Update
                                                         Amenity</button>
                                                 </div>
@@ -127,8 +116,7 @@
     </div>
 </div>
 
-<div class="modal" id="amenity" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel_1" style="display: none;"
-    aria-hidden="true">
+<div class="modal" id="amenity" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel_1" style="display: none;" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -143,10 +131,8 @@
                     <div class="row no-gutters">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label class="form-control-label active">Amenity: <span
-                                        class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="amenity" placeholder="Enter Amenity"
-                                    value="{{ old('amenity') }}">
+                                <label class="form-control-label active">Amenity: <span class="tx-danger">*</span></label>
+                                <input class="form-control" type="text" name="amenity" placeholder="Enter Amenity" value="{{ old('amenity') }}">
                                 <p class="text-danger">{{$errors->first('amenity')}}
                                 </p>
                             </div>
