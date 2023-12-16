@@ -94,4 +94,59 @@ class PropertyTypeController extends Controller
         $amenitiies = Amenities::latest()->get();
         return view('amenity.all', ['amenities' => $amenitiies]);
     }
+
+    public function createAmenity(Request $request)
+    {
+        $request->validate([
+            'amenity' => ['required', 'string', 'max:255'],
+        ]);
+
+        $amenity = new Amenities();
+        $amenity->amenity = trim($request->amenity);
+
+        $amenity->save();
+
+        $notificaion = array(
+            'message' => 'Amenity created successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notificaion);
+    }
+
+    public function updateAmenity(Request $request)
+    {
+        $request->validate([
+            'amenity' => ['required', 'string', 'max:255'],
+        ]);
+
+        $id = $request->id;
+
+        $amenity = Amenities::findOrFail($id);
+
+        $amenity->amenity = trim($request->amenity);
+
+        $amenity->save();
+
+        $notificaion = array(
+            'message' => 'Amenity updated successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notificaion);
+    }
+
+    public function deleteAmenity($id)
+    {
+
+        $amenity = Amenities::findOrFail($id);
+        $amenity->delete();
+
+        $notificaion = array(
+            'message' => 'Amenity deleted successfully',
+            'alert-type' => 'error'
+        );
+
+        return redirect()->back()->with($notificaion);
+    }
 }

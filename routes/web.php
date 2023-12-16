@@ -52,6 +52,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/delete_type/{id}', [PropertyTypeController::class, 'deleteType'])->name('admin.delete_type'); // 
 
     Route::get('/amenity/all', [PropertyTypeController::class, 'allAmenity'])->name('amenity.all');
+    Route::post('/createAmenity', [PropertyTypeController::class, 'createAmenity'])->name('createAmenity');
+    Route::post('updateAmenity', [PropertyTypeController::class, 'updateAmenity'])->name('updateAmenity'); // 
+    Route::get('/amenity/delete/{id}', [PropertyTypeController::class, 'deleteAmenity'])->name('amenity.delete'); // 
 });
 
 

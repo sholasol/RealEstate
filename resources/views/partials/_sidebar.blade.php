@@ -13,6 +13,10 @@
                 <a href="{{ url('admin/property_type') }}"><i data-feather="server"></i>
                     <span>Property Type</span></a>
             </li>
+            <li class="@if(Request::segment(2) =='all') active @endif">
+                <a href="{{ url('amenity/all') }}"><i data-feather="file"></i>
+                    <span>Amenity</span></a>
+            </li>
             <!-- <li class="@if(Request::segment(2) =='employees') active @endif">
                 <a href="{{ url('admin/employees') }}"><i data-feather="users"></i>
                     <span>Employees</span></a>
