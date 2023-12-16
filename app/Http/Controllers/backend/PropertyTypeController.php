@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\backend;
 
+use App\Models\Amenities;
 use App\Models\PropertyType;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -86,5 +87,11 @@ class PropertyTypeController extends Controller
         );
 
         return redirect('/admin/property_type')->with($notificaion);
+    }
+
+    public function allAmenity()
+    {
+        $amenitiies = Amenities::latest()->get();
+        return view('amenity.all', ['amenities' => $amenitiies]);
     }
 }
