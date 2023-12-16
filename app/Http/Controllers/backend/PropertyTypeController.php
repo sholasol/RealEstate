@@ -77,7 +77,7 @@ class PropertyTypeController extends Controller
 
     public function deleteType($id)
     {
-        $type = PropertyType::find($id);
+        $type = PropertyType::findOrFail($id);
         $type->delete();
 
         $notificaion = array(

@@ -47,12 +47,9 @@
                                     <td><span>{{$key + 1}}</span></td>
                                     <td><a href="" class="text-inherit">{{$type->type_name}}</a></td>
                                     <td>{{$type->type_icon}}</td>
-                                    <td class="text-right"> <a href="{{ route('admin.edit_type', $type->id) }}"
-                                            class="btn btn-label-primary btn-sm mg-y-5"><i class="fa fa-pencil"></i>
+                                    <td class="text-right"> <a href="{{ route('admin.edit_type', $type->id) }}" class="btn btn-label-primary btn-sm mg-y-5"><i class="fa fa-pencil"></i>
                                             Edit</a>
-                                        <a onclick="return confirm('Are you sure you want to delete this property type?')"
-                                            href="{{ route('admin.delete_type', $type->id) }}"
-                                            class="btn btn-label-danger btn-sm mg-y-5"><i class="fa fa-trash"></i>
+                                        <a id="delete" href="{{ route('admin.delete_type', $type->id) }}" class="btn btn-label-danger btn-sm mg-y-5"><i class="fa fa-trash"></i>
                                             Delete</a>
                                     </td>
                                 </tr>
