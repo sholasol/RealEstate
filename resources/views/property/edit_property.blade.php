@@ -23,7 +23,7 @@
             <div class="card mg-b-20">
                 <div class="card-header">
                     <h4 class="card-header-title">
-                        Create Property Types
+                        Edit Property Types
                     </h4>
                     <div class="card-header-btn">
                         <a href="{{ url('admin/create_type') }}" class="fa fa-plus-circle text-primary"> Create Type
@@ -31,17 +31,18 @@
                     </div>
                 </div>
                 <div class="card-body pd-0 collapse show" id="latestProjects">
-                    <form method="post" action="{{ url('createPropertyType') }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ url('updatePropertyType') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class=" card-body collapse show" id="collapse2">
                             <div class="form-layout form-layout-2">
                                 <div class="row no-gutters">
+                                    <input type="hidden" name="id" value="{{ $type->id}}">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label active">Type Name: <span
                                                     class="tx-danger">*</span></label>
                                             <input class="form-control" type="text" name="name"
-                                                placeholder="Enter Icon Name" value="{{ old('name') }}">
+                                                placeholder="Enter Type Name" value="{{ $type->type_name}}">
                                             <p class="text-danger">{{$errors->first('name')}}
                                             </p>
                                         </div>
@@ -52,8 +53,8 @@
                                         <div class="form-group mg-md-l--1">
                                             <label class="form-control-label active">Type Icon: <span
                                                     class="tx-danger">*</span></label>
-                                            <input class="form-control" type="text" name="icon" placeholder="Icon"
-                                                value="{{ old('icon') }}">
+                                            <input class="form-control" type="text" name="icon"
+                                                placeholder="Enter Icon Name" value="{{ $type->type_icon}}">
                                             <p class="text-danger">{{$errors->first('icon')}}
                                             </p>
                                         </div>
@@ -65,7 +66,7 @@
 
                                     <!-- row -->
                                     <div class="form-layout-footer bd pd-20 bd-t-0">
-                                        <button type="submit" class="btn btn-custom-primary">Create Type</button>
+                                        <button type="submit" class="btn btn-custom-primary">Update Type</button>
                                         <button type="rest" class="btn btn-secondary">Reset</button>
                                     </div>
                                     <!-- form-group -->

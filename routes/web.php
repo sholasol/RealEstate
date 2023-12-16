@@ -46,6 +46,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/property_type', [PropertyTypeController::class, 'propertyType'])->name('admin.property_type');
     Route::get('/admin/create_type', [PropertyTypeController::class, 'createType'])->name('admin.create_type');
     Route::post('/createPropertyType', [PropertyTypeController::class, 'createPropertyType'])->name('createPropertyType');
+
+    Route::get('/admin/edit_type/{id}', [PropertyTypeController::class, 'editType'])->name('admin.edit_type'); // 
+    Route::post('updatePropertyType', [PropertyTypeController::class, 'updatePropertyType'])->name('updatePropertyType'); // 
+    Route::get('/admin/delete_type/{id}', [PropertyTypeController::class, 'deleteType'])->name('admin.delete_type'); // 
 });
 
 
