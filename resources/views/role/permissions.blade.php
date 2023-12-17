@@ -44,13 +44,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse($permissions as $key => $permissions)
+                                @forelse($items as $key => $permission)
                                 <tr>
                                     <td><span>{{$key + 1}}</span></td>
-                                    <td><a href="" class="text-inherit">{{$permissions->name}}</a></td>
-                                    <td>{{$permissions->group_name}}</td>
-                                    <td class="text-right"> <a href="{{ route('permission.edit', $permission->id) }}"
-                                            class="btn btn-label-primary btn-sm mg-y-5"><i class="fa fa-pencil"></i>
+                                    <td><a href="" class="text-inherit">{{$permission->name}}</a></td>
+                                    <td>{{$permission->group_name}}</td>
+                                    <td class="text-right"> <a href="#" class="btn btn-label-primary btn-sm mg-y-5"><i
+                                                class="fa fa-pencil"></i>
                                             Edit</a>
                                         <a id="delete" href="{{ route('permission.delete', $permission->id) }}"
                                             class="btn btn-label-danger btn-sm mg-y-5"><i class="fa fa-trash"></i>
@@ -64,6 +64,7 @@
                                 @endforelse
                             </tbody>
                         </table>
+                        @include('partials._paginate')
                     </div>
                 </div>
             </div>
@@ -102,8 +103,13 @@
                             <div class="form-group">
                                 <label class="form-control-label active">Group Name: <span
                                         class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="group_name" placeholder="Enter Group Name"
-                                    value="{{ old('group_name') }}">
+                                <select class="form-control" name="group_name">
+                                    <option value="">--Select--</option>
+                                    <option value="type">Type</option>
+                                    <option value="property">Property</option>
+                                    <option value="amenity">Amenity</option>
+                                    <option value="role">Role & Permission</option>
+                                </select>
                                 <p class="text-danger">{{$errors->first('group_name')}}
                                 </p>
                             </div>

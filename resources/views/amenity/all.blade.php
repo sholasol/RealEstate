@@ -43,7 +43,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse($amenities as $key => $aminity)
+                                @forelse($items as $key => $aminity)
                                 <tr>
                                     <td><span>{{$key + 1}}</span></td>
                                     <td><a href="" class="text-inherit">{{$aminity->amenity}}</a></td>
@@ -53,10 +53,6 @@
                                             Delete</a>
                                     </td>
                                 </tr>
-
-
-
-
 
                                 <div class="modal" id="amenityUpd{{$aminity->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel_1" style="display: none;" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
@@ -93,14 +89,6 @@
                                     </div>
                                 </div>
 
-
-
-
-
-
-
-
-
                                 @empty
                                 <tr>
                                     <td colspan="4">No Amenity found. </td>
@@ -108,6 +96,7 @@
                                 @endforelse
                             </tbody>
                         </table>
+                        @include('partials._paginate')
                     </div>
                 </div>
             </div>

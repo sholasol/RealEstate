@@ -10,8 +10,8 @@ class RoleController extends Controller
 {
     public function permissions()
     {
-        $permissions = Permission::all();
-        return view('role.permissions', ['permissions' => $permissions]);
+        $items = Permission::paginate(5);
+        return view('role.permissions', ['items' => $items]);
     }
 
     public function createPermission(Request $request)
@@ -23,13 +23,26 @@ class RoleController extends Controller
 
         $perms = new Permission();
 
-        $perms->name = trim($request->name);
+        $perms->name = trim($request->permission);
         $perms->group_name = trim($request->group_name);
 
         $perms->save();
 
         $notificaion = array(
             'message' => 'Permission created successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notificaion);
+    }
+
+    public function deletePermission($id)
+    {
+        $perm = Permission::findOrFail($id);
+        $perm->delete();
+
+        $notificaion = array(
+            'message' => 'Permission deleted successfully',
             'alert-type' => 'success'
         );
 

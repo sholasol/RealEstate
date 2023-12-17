@@ -11,8 +11,8 @@ class PropertyTypeController extends Controller
 {
     public  function propertyType()
     {
-        $types = PropertyType::latest()->get();
-        return view('property.types', ['types' => $types]);
+        $items = PropertyType::latest()->paginate(10);
+        return view('property.types', ['items' => $items]);
     }
 
     public function createType()
@@ -91,8 +91,8 @@ class PropertyTypeController extends Controller
 
     public function allAmenity()
     {
-        $amenitiies = Amenities::latest()->get();
-        return view('amenity.all', ['amenities' => $amenitiies]);
+        $items = Amenities::latest()->paginate(10);
+        return view('amenity.all', ['items' => $items]);
     }
 
     public function createAmenity(Request $request)

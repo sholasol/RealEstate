@@ -42,7 +42,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse($types as $key => $type)
+                                @forelse($items as $key => $type)
                                 <tr>
                                     <td><span>{{$key + 1}}</span></td>
                                     <td><a href="" class="text-inherit">{{$type->type_name}}</a></td>
@@ -60,6 +60,7 @@
                                 @endforelse
                             </tbody>
                         </table>
+                        @include('partials._paginate')
                     </div>
                 </div>
             </div>
