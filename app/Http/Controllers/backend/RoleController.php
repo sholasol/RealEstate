@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\backend;
 
 use Illuminate\Http\Request;
+use App\Exports\PermissionExport;
 use App\Http\Controllers\Controller;
+use Maatwebsite\Excel\Facades\Excel;
 use Spatie\Permission\Models\Permission;
 
 class RoleController extends Controller
@@ -47,5 +49,37 @@ class RoleController extends Controller
         );
 
         return redirect()->back()->with($notificaion);
+    }
+
+    public function updatePermission(Request $request)
+    {
+        $request->validate([
+            'permission' => ['required', 'string', 'max:255'],
+            'group_name' => ['required', 'string', 'lowercase'],
+        ]);
+
+        $perms = Permission::findOrFail($request->id);
+
+        $perms->name = trim($request->permission);
+        $perms->group_name = trim($request->group_name);
+
+        $perms->save();
+
+        $notificaion = array(
+            'message' => 'Permission updated successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notificaion);
+    }
+
+    public function importPermissions()
+    {
+        return view('role.import');
+    }
+
+    public function exportPermissions()
+    {
+        return Excel::download(new PermissionExport, 'permission.xlsx');
     }
 }

@@ -26,6 +26,12 @@
                         Permissions
                     </h4>
                     <div class="card-header-btn">
+                        <a href="#" data-toggle="modal" data-target="#import" class="fa fa-file-excel-o text-success mr-2">
+                            Import
+                        </a>
+                        <a href="{{ url('export/permission') }}" class="fa fa-external-link-square text-info mr-2">
+                            Export
+                        </a>
                         <a href="#" data-toggle="modal" data-target="#permission" class="fa fa-plus-circle text-primary">
                             Create Permission
                         </a>
@@ -66,11 +72,12 @@
                                                     <span aria-hidden="true"><i class="ion-ios-close-empty"></i></span>
                                                 </button>
                                             </div>
-                                            <form method="post" action="{{ url('createPermission') }}" enctype="multipart/form-data">
+                                            <form method="post" action="{{ url('updatePermission') }}" enctype="multipart/form-data">
                                                 {{ csrf_field() }}
                                                 <div class="modal-body">
                                                     <div class="row no-gutters">
                                                         <div class="col-md-12">
+                                                            <input type="hidden" name="id" value="{{$permission->id}}" />
                                                             <div class="form-group">
                                                                 <label class="form-control-label active">Permission:
                                                                     <span class="tx-danger">*</span></label>
@@ -106,7 +113,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                    <button type="submit" class="btn btn-primary">Create
+                                                    <button type="submit" class="btn btn-primary">Update
                                                         Permission</button>
                                                 </div>
                                             </form>
@@ -175,6 +182,40 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Create Permission</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="import" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel_1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel_1">Import Permission </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="ion-ios-close-empty"></i></span>
+                </button>
+            </div>
+            <form method="post" action="{{ url('importPermission') }}" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                <div class="modal-body">
+                    <div class="row no-gutters">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="form-control-label active">Import Xlsx: <span class="tx-danger">*</span></label>
+                                <input class="form-control" type="file" name="import">
+                                <p class="text-danger">{{$errors->first('import')}}
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Import Permission</button>
                 </div>
             </form>
         </div>

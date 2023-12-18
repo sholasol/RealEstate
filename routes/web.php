@@ -59,8 +59,13 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     //Role
     Route::get('/role/permissions', [RoleController::class, 'permissions'])->name('role.permissions');
-    Route::post('/createPermission', [RoleController::class, 'createPermission'])->name('createPermission');
+    Route::post('/createPermission', [RoleController::class, 'createPermission'])->name('createPermission'); //importPermission
     Route::get('/permission/delete/{id}', [RoleController::class, 'deletePermission'])->name('permission.delete'); //
+    Route::post('/updatePermission', [RoleController::class, 'updatePermission'])->name('updatePermission');
+    Route::get('/permission/delete/{id}', [RoleController::class, 'deletePermission'])->name('permission.delete'); // 
+    Route::get('/export/permissions', [RoleController::class, 'exportPermissions'])->name('export.permission');
+
+    Route::post('/importPermission', [RoleController::class, 'importPermission'])->name('importPermission'); //
 });
 
 
