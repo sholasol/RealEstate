@@ -26,8 +26,7 @@
                         Permissions
                     </h4>
                     <div class="card-header-btn">
-                        <a href="#" data-toggle="modal" data-target="#permission"
-                            class="fa fa-plus-circle text-primary">
+                        <a href="#" data-toggle="modal" data-target="#permission" class="fa fa-plus-circle text-primary">
                             Create Permission
                         </a>
                     </div>
@@ -49,14 +48,73 @@
                                     <td><span>{{$key + 1}}</span></td>
                                     <td><a href="" class="text-inherit">{{$permission->name}}</a></td>
                                     <td>{{$permission->group_name}}</td>
-                                    <td class="text-right"> <a href="#" class="btn btn-label-primary btn-sm mg-y-5"><i
-                                                class="fa fa-pencil"></i>
+                                    <td class="text-right"> <a href="#" data-toggle="modal" data-target="#permission{{$permission->id}}" class="btn btn-label-primary btn-sm mg-y-5"><i class="fa fa-pencil"></i>
                                             Edit</a>
-                                        <a id="delete" href="{{ route('permission.delete', $permission->id) }}"
-                                            class="btn btn-label-danger btn-sm mg-y-5"><i class="fa fa-trash"></i>
+                                        <a id="delete" href="{{ route('permission.delete', $permission->id) }}" class="btn btn-label-danger btn-sm mg-y-5"><i class="fa fa-trash"></i>
                                             Delete</a>
                                     </td>
                                 </tr>
+
+
+
+                                <div class="modal" id="permission{{$permission->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel_1" style="display: none;" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel_1">Update Permission</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true"><i class="ion-ios-close-empty"></i></span>
+                                                </button>
+                                            </div>
+                                            <form method="post" action="{{ url('createPermission') }}" enctype="multipart/form-data">
+                                                {{ csrf_field() }}
+                                                <div class="modal-body">
+                                                    <div class="row no-gutters">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label class="form-control-label active">Permission:
+                                                                    <span class="tx-danger">*</span></label>
+                                                                <input class="form-control" type="text" name="permission" placeholder="Enter Permission" value="{{$permission->name}}">
+                                                                <p class="text-danger">{{$errors->first('permission')}}
+                                                                </p>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label class="form-control-label active">Group Name:
+                                                                    <span class="tx-danger">*</span></label>
+                                                                <select class="form-control" name="group_name">
+                                                                    <option value="type" {{ $permission->group_name =='type' ? 'selected' : ''}}>
+                                                                        Type
+                                                                    </option>
+                                                                    <option value="property" {{ $permission->group_name =='property' ? 'selected' : ''}}>
+                                                                        Property</option>
+                                                                    <option value="amenity" {{ $permission->group_name =='amenity' ? 'selected' : ''}}>
+                                                                        Amenity</option>
+                                                                    <option value="role" {{ $permission->group_name =='role' ? 'selected' : ''}}>
+                                                                        Role & Permission
+                                                                    </option>
+                                                                </select>
+                                                                <p class="text-danger">{{$errors->first('group_name')}}
+                                                                </p>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Create
+                                                        Permission</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                                 @empty
                                 <tr>
                                     <td colspan="4">No permissions found. </td>
@@ -74,12 +132,11 @@
 </div>
 
 
-<div class="modal" id="permission" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel_1"
-    style="display: none;" aria-hidden="true">
+<div class="modal" id="permission" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel_1" style="display: none;" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel_1">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel_1">Permission </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true"><i class="ion-ios-close-empty"></i></span>
                 </button>
@@ -90,10 +147,8 @@
                     <div class="row no-gutters">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label class="form-control-label active">Permission: <span
-                                        class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" name="permission" placeholder="Enter Permission"
-                                    value="{{ old('permission') }}">
+                                <label class="form-control-label active">Permission: <span class="tx-danger">*</span></label>
+                                <input class="form-control" type="text" name="permission" placeholder="Enter Permission" value="{{ old('permission') }}">
                                 <p class="text-danger">{{$errors->first('permission')}}
                                 </p>
                             </div>
@@ -101,8 +156,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label class="form-control-label active">Group Name: <span
-                                        class="tx-danger">*</span></label>
+                                <label class="form-control-label active">Group Name: <span class="tx-danger">*</span></label>
                                 <select class="form-control" name="group_name">
                                     <option value="">--Select--</option>
                                     <option value="type">Type</option>
